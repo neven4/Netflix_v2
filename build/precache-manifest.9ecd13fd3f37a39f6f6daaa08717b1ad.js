@@ -36,16 +36,16 @@ self.__precacheManifest = [
     "url": "/static/media/RobotoBold.af01b503.woff"
   },
   {
+    "revision": "69b787c9775c9bd0ac27f3fc3fa19223",
+    "url": "/static/media/SourceSansProLight.69b787c9.woff"
+  },
+  {
     "revision": "42386a032cd63442e3c8b41b6c8dbf06",
     "url": "/static/media/SourceSansProBold.42386a03.woff"
   },
   {
     "revision": "a2a7fa73e5fe01b756a05d98b6a851b4",
     "url": "/static/media/SourceSansProRegular.a2a7fa73.woff"
-  },
-  {
-    "revision": "69b787c9775c9bd0ac27f3fc3fa19223",
-    "url": "/static/media/SourceSansProLight.69b787c9.woff"
   },
   {
     "revision": "549a7c416f9fd2ff33a05073fa7c26f1",
