@@ -1,0 +1,176 @@
+@import '../../styles/global.scss';
+
+.active {
+    display: block;
+    width: 100%;
+    height: 0.2vw;
+    background-color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.morePage {
+    margin-top: 8%;
+
+    @include mobile-ld {
+        margin-top: 10vw;
+    }
+
+    @include smartphones {
+        margin-top: 15vw;
+    }
+
+    &Header {
+        align-items: center;
+        background-color: $slideMoreInfoBG;
+        display: flex;
+        font-family: 'Roboto';
+        font-size: 1.4vw;
+        color: $white;
+        padding: 0 4%;
+        height: 4vw;
+        position: relative;
+
+        @include mobile-ld {
+            font-size: 2.4vw;
+            height: 7vw;
+        }
+
+        @include smartphones {
+            flex-direction: column;
+            font-size: 4vw;
+            height: 25vw;
+        }
+
+        h2 {
+            &:first-letter {
+                text-transform: capitalize;
+            }
+        }
+
+        & > ul:first-child {
+            border-right: 1px solid $white;
+        }
+
+        &Filter {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            list-style: none;
+            margin-left: auto;
+
+            & > li:not(:first-child) {
+                margin-left: 1.5vw;
+
+                @include mobile-ld {
+                    margin-left: 2vw;
+                }
+            }
+
+            & > li:nth-child(4) {
+                margin-left: 4vw;
+
+                @include mobile-ld {
+                    margin-left: 6vw;
+                }
+            }
+
+            @include smartphones {
+                justify-content: space-between;
+                margin-left: 0;
+
+                & > li:not(:first-child) {
+                    margin-left: 5vw;
+                }
+
+                & > li:nth-child(4) {
+                    margin-left: 14vw;
+                }
+            }
+
+            li {
+                line-height: 4vw;
+                position: relative;
+                cursor: pointer;
+
+                @include mobile-ld {
+                    line-height: 7vw;
+                }
+
+                @include smartphones {
+                    line-height: 10vw;
+                }
+            }
+        }
+    }
+
+    &Body {
+        margin: 4% 8%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 2.5vw;
+        grid-row-gap: 3.5vw;
+        justify-content: center;
+        justify-items: center;
+
+        @include mobile-ld {
+            margin: 5% 10%;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 3.5vw;
+            grid-row-gap: 4.5vw;
+        }
+
+        @include smartphones {
+            margin: 8% 12%;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 5vw;
+            grid-row-gap: 7vw;
+        }
+    }
+
+    &Item {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+            img {
+                opacity: 1;
+            }
+        }
+
+        img {
+            width: 100%;
+            opacity: 0.8;
+            height: auto;
+        }
+
+        h4 {
+            font-size: 1.4vw;
+            margin: 0;
+            margin-top: 1vw;
+
+            @include mobile-ld {
+                font-size: 2.4vw;
+            }
+
+            @include smartphones {
+                font-size: 4vw;
+            }
+        }
+    }
+
+    &NoData {
+        color: $white;
+        font-size: 1.4vw;
+        margin: 2% 4%;
+
+        @include smartphones {
+            font-size: 4vw;
+            margin: 5% 10%;
+        }
+    }
+}

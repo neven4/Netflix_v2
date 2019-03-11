@@ -1,0 +1,34 @@
+@import '../../styles/global.scss';
+
+.browes{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    overflow: hidden;
+}
+
+.menuOpened {
+    transition: transform .54s cubic-bezier(.5,0,.1,1) 0s, opacity .44s cubic-bezier(.5,0,.1,1) .1s;
+}
+
+.title {
+    color: $lightRed;
+    font-size: 1.1rem;
+    font-family: $sourceSansPro;
+
+    @include mobiles {
+        font-size: 0.9rem;
+    }
+}
+
+.arrowIcon {
+    color: $lightRed;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.sortIcon {
+    color: $lightRed;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}

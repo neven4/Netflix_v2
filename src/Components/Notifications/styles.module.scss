@@ -1,0 +1,83 @@
+@import '../../styles/global.scss';
+
+.bellIcon {
+    color: $white;
+    font-size: 1.375rem;
+    @include mobiles {
+        font-size: 1.2rem;
+    }
+}
+
+.circleIcon {
+    border-radius: 50%;
+    background-color: $lightRed;
+    height: 0.5vw;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 0.5vw;
+    z-index: 10;
+}
+
+.notific {
+    user-select: none;
+    position: relative;
+
+    &Item {
+        cursor: pointer;
+    }
+
+    &Open {
+        position: absolute;
+        top: 34px;
+        right: 0;
+        display: block;
+        background-color: rgba(#000, 0.85);
+
+        &:before {
+            content:"";
+            border-style: solid;
+            border-width: 0 12px 6px 12px;
+            border-color: rgba(#000, 0.85) transparent rgba(#000, 0.85) transparent;
+            position: absolute;
+            top: -6px;
+            right: 0;
+        }
+
+        &Container {
+            display: block;
+            max-height: 80vh;
+            max-height: calc(100vh - 280px);
+            min-height: 100px;
+            overflow: auto;
+            padding: 0 10px;
+            list-style: none;
+            width: 408px;
+            list-style: none;
+            user-select: none;
+            color: $synopsisColor;
+
+            @include smartphones {
+                width: 75vw;
+            }
+
+            li {
+                cursor: pointer;
+                padding: 0.2vw 0;
+                font-size: 1.1vw;
+                width: 100%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+
+                @include mobiles {
+                    font-size: 1.2rem;
+                }    
+            }
+        }
+    }
+
+    &NoNotific {
+        text-align: center;
+    }
+}

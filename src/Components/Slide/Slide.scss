@@ -1,0 +1,192 @@
+@import '../../styles/global.scss';
+
+.slideHeader {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: radial-gradient(circle at 0% 50%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 50%);
+
+        @include smartphones {
+            background-image: none;
+            background-color: rgba(#000, 0.55);
+        }
+    }
+
+    &Info {
+        color: $white;
+        z-index: 200;
+        width: 35%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 4%;
+        z-index: 100;
+
+        @include smartphones {
+            width: 90%;
+        }
+
+        &Container {
+            margin-top: 10vw;
+            position: relative;
+            width: 100%;
+            font-family: $sourceSansPro;
+            z-index: 3;
+
+            @include smartphones {
+                height: 55%;
+                margin-top: 30vw;
+                display: flex;
+                flex-direction: column;
+            }
+
+            a {
+                text-decoration: none;
+                color: $white;
+            }
+        }
+
+        h3 {
+            font-size: 2.4vw;
+            margin: 0;
+            margin-bottom: 0.8vw;
+            padding: 0;
+
+            @include mobile-ld {
+                font-size: 3vw;
+            }
+
+            @include smartphones {
+                text-align: center;
+                word-wrap: wrap;
+                white-space: normal;
+                width: 92vw;
+                font-size: 9vw;
+                margin-bottom: 6vw;
+                z-index: 300;
+            }
+        }
+
+        &About {
+            font-size: 1.3vw;
+            margin: 0.8vw 0 1.2vw 0;
+            white-space: normal;
+            line-height: 1.5;
+            height: 13vw;
+            overflow: hidden;
+
+            @include mobile-ld {
+                font-size: 1.6vw;
+                height: 13.2vw;
+            }
+
+            @include smartphones {
+                display: none;
+            }
+        }
+
+        &Add {
+            z-index: 300;
+
+            @include smartphones {
+                justify-content: center;
+                margin-top: auto;
+            }
+
+            & > div {
+                height: 1.8vw;
+                width: 1.8vw;
+
+                @include mobile-ld {
+                    height: 2.8vw;
+                    width: 2.8vw;
+                }
+
+                @include smartphones {
+                    height: 10vw;
+                    width: 10vw;
+                }
+
+                & > i {
+                    @include mobile-ld {
+                        font-size: 1.6vw;
+                    }
+
+                    @include smartphones {
+                        font-size: 7vw;
+                    }
+
+                }
+
+                & > svg {
+                    height: 0.95vw;
+                    width: 0.95vw;
+
+                    @include mobile-ld {
+                        height: 1.4vw;
+                        width: 1.4vw;
+                    }
+
+                    @include smartphones {
+                        height: 5vw;
+                        width: 5vw;
+                    }
+                }
+            }
+
+            span {
+                font-size: 1.2vw;
+
+                @include mobile-ld {
+                    font-size: 1.8vw;
+                }
+
+                @include smartphones {
+                    font-size: 6vw;
+                    margin-left: 5vw;
+                }
+
+            }
+        }
+    }
+}
+
+.smallInfoHead {
+    font-size: 1.2vw !important;
+
+    & > span:not(:first-child) {
+        margin-left: 1.1vw !important;
+    }
+
+    @include mobile-ld {
+        font-size: 1.6vw !important;
+        margin: 1vw 0;
+
+        & > span:not(:first-child) {
+            margin-left: 1.8vw !important;
+        }
+    }
+
+    @include smartphones {
+        text-align: center;
+        justify-content: center;
+        font-size: 5.5vw !important;
+
+        & > span:not(:first-child) {
+            margin-left: 5.5vw !important;
+        }
+    }  
+}

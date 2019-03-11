@@ -1,0 +1,36 @@
+@import '../../styles/global.scss';
+
+.user {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    color: $white;
+    cursor: default;
+
+    &Name {
+        font-size: 1.2vw;
+
+        @include smartphones {
+            display: none;
+        }
+    }
+
+    &Avatar {
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        margin-left: 0.8vw;
+        height: 2.4vw;
+        width: 2.4vw;
+
+        @include smartphones {
+            margin-left: 0;
+            height: 9vw;
+            width: 9vw;
+            margin-right: 5%;
+            margin-left: 1.5rem;
+        }
+    }
+}
+

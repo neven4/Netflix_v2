@@ -1,0 +1,54 @@
+@import '../../styles/global.scss';
+
+.searchField {
+    border-radius: 30px;
+    font-family: $sourceSansPro;
+    font-size: 1rem;
+    color: $white;
+    padding: 6px 30px 6px 15px;
+    background-color: rgba(0, 0, 0, 0.45);
+    border: none;
+    outline: none;
+    transition: background-color .4s ease-out 0.1s;
+
+    &::placeholder {
+        color: $metaDataColor;
+    }
+
+    @include mobile-all {
+        font-size: 0.7rem;
+    }
+
+    @include smartphones {
+        font-size: 5.5vw;
+        padding: 3vw 10vw 3vw 5vw;
+    }
+}
+
+.searchBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    outline: none;
+}
+
+.icon {
+    color: $white;
+    font-size: 1rem;
+
+    @include mobile-all {
+        font-size: 0.7rem;
+    }
+
+    @include smartphones {
+        font-size: 5vw;
+    }
+}
+
+.form {
+    position: relative;
+}

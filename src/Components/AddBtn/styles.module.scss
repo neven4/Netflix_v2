@@ -1,0 +1,40 @@
+@import '../../styles/global.scss';
+
+.addBtn {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-family: $sourceSansPro;
+    transition: all 0.3s ease-out;
+    user-select: none;
+
+    &Plus {
+        border-color: $white;
+        border-width: 2px;
+
+        svg {
+            path {
+                fill: $white;
+            }
+        }
+    }
+
+    &Done {
+        border-color: $green !important;
+
+        i {
+            font-size: 1vw;
+            color: $green;
+        }
+    }
+
+    &Title {
+        margin-left: 7px;
+    }
+}
+
+.addBtnPlus {
+    & > svg {
+        path: black;
+    }
+}

@@ -1,0 +1,37 @@
+@import '../../styles/global.scss';
+
+.btn {
+    align-items: center;
+    border: 1px solid rgba($white, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgba($white, 0.5);
+    display: flex;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+        border-color: $white;
+
+        path {
+            fill: $white;
+        }
+    }
+
+    svg {
+        height: 8px;
+        width: 8px;
+
+        path {
+            fill: rgba($white, 0.5);
+            transition: all 0.3s ease-out;
+        }
+    }
+}
+
+
+
+
+

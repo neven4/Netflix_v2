@@ -1,0 +1,45 @@
+@import '../../styles/global.scss';
+
+.moreInfoDetails {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+    &Column {
+        width: 20%;
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+    
+            li {
+                font-size: 1.2vw;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &Label {
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: $metaDataColor;
+
+        &:not(:first-child) {
+            margin-top: 14px;
+        }
+    }
+
+    &Link {
+        color: $synopsisColor;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+

@@ -1,0 +1,196 @@
+@import '../../styles/global.scss';
+
+.footer {
+    align-items: center;
+    background-color: $slideMoreInfoBG;
+    display: flex;
+    padding: 4%;
+    margin-top: 10%;
+
+    @include mobile-all {
+        flex-direction: column-reverse;
+    }
+
+    @include mobile-ld {
+        flex-direction: column-reverse;
+    }
+
+    @include smartphones {
+        flex-direction: column-reverse;
+    }
+
+    &Logo {
+        width: 15vw;
+        
+        @include mobile-ld {
+            width: 68px;
+        }
+
+        @include smartphones {
+            width: 68px;
+        }
+    }
+
+    &LeftSide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include mobile-ld {
+            margin-bottom: 15vw;
+        }
+
+        @include smartphones {
+            margin-bottom: 15vw;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 1vw;
+            color: $metaDataColor;
+            font-size: 1.2vw;
+
+            @include mobile-ld {
+                font-size: 2.4vw;
+            }
+
+            @include smartphones {
+                font-size: 4vw;
+            }
+        }
+    }
+
+    &LinkExternal {
+        color: $synopsisColor;
+        text-decoration: none;
+        margin-left: 5px;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    &Center {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: 0;
+
+        @include mobile-all {
+            align-items: center;
+            margin-bottom: 5vw;
+            margin-left: 0;
+        }
+
+        @include mobile-ld {
+            align-items: center;
+            margin-bottom: 5vw;
+            margin-left: 0;
+        }
+
+        @include smartphones {
+            align-items: center;
+            margin-bottom: 10vw;
+            margin-left: 0;
+        }
+
+        &Text {
+            color: $metaDataColor;
+            white-space: normal;
+            overflow: hidden;
+
+            &:not(:first-child) {
+                margin-top: 7px;
+            }
+        }
+    }
+
+    &Icons {
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        margin-top: 2vw;
+        font-size: 2.5vw;
+        padding: 0;
+
+        @include mobile-ld {
+            font-size: 10vw;
+            margin-top: 5vw;
+        }
+
+        @include smartphones {
+            font-size: 20vw;
+            margin-top: 5vw;
+        }
+    }
+
+    &Icon {
+        color: $metaMenu;
+
+        @include mobile-all {
+            font-size: 5vw;
+            margin-left: 1vw;
+        }
+
+        @include mobile-ld {
+            font-size: 5vw;
+            margin-left: 1vw;
+        }
+
+        @include smartphones {
+            font-size: 8vw;
+            margin-left: 5vw;
+        }
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &RightSide {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+
+        @include mobile-all {
+            margin-top: 3vw;
+            align-items: center;
+            margin-left: 0;
+            margin-bottom: 5vw;
+        }
+
+        @include mobile-ld {
+            margin-top: 3vw;
+            align-items: center;
+            margin-left: 0;
+            margin-bottom: 5vw;
+        }
+
+        @include smartphones {
+            margin-top: 6vw;
+            align-items: center;
+            margin-left: 0;
+            margin-bottom: 10vw;
+        }
+    }
+
+    &TmdbLogo {
+        background-image: url(./tmdbLogo.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        width: 16vw;
+        height: 6vw;
+
+        @include mobile-ld {
+            width: 20vw;
+            height: 7vw;
+        }
+
+        @include smartphones {
+            width: 34vw;
+            height: 14vw;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import '../../styles/global.scss';
+
+.reviews {
+    margin: 4%;
+    margin-top: 10%;
+    position: relative;
+
+    @include smartphones {
+        margin-top: 20vw;
+    }
+
+    h3 {
+        color: $white;
+
+        @include smartphones {
+           font-size: 8vw;
+        }
+    }
+
+    &Item {
+        margin: 5%;
+
+        &Body {
+            color: $synopsisColor;
+            font-size: 1.3vw;
+
+            @include smartphones {
+                font-size: 5vw;
+            }
+        }
+
+        &Author {
+            color: $lightRed;
+            font-size: 1.4vw;
+
+            @include smartphones {
+                font-size: 5vw;
+            }
+        }
+    }
+}

@@ -1,0 +1,220 @@
+@import '../../styles/global.scss';
+
+.personPage {
+    margin: 8% 0;
+    color: $white;
+
+    @include mobile-ld {
+        margin: 15vw 0;
+    }
+
+    @include smartphones {
+        margin: 20vw 0;
+    }
+
+    &MainInfo {
+        margin: 0 4%;
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+        grid-gap: 4%;
+
+        @include mobile-ld {
+            grid-gap: 30px;
+        }
+
+        @include smartphones {
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+
+        &Container {
+            h1 {
+                padding: 0;
+                margin: 0;
+                font-size: 2.5vw;
+                margin-bottom: 1.5vw;
+
+                @include mobile-ld {
+                    font-size: 5vw;
+                    margin-bottom: 3vw;
+                }
+
+                @include smartphones {
+                    text-align: center;
+                    font-size: 8vw;
+                    margin-bottom: 6vw;
+                }
+            }
+        }
+
+        &Item {
+            display: flex;
+            margin-top: 0.8vw;
+            font-family: "Roboto";
+
+            @include smartphones {
+                margin-top: 5vw;
+                flex-direction: column;
+            }
+
+            &Title {
+                display: block;
+                font-size: 1.3vw;
+                flex: 1 1 15%;
+                line-height: 1.5;
+
+                @include mobile-ld {
+                    font-size: 3vw;
+                    margin-bottom: 1vw;
+                    flex: 1 1 40%;
+                }
+
+                @include smartphones {
+                    font-size: 7vw;
+                    flex: 1 1 40%;
+                }
+            }
+
+            &Content {
+                flex: 1 1 85%;
+                display: block;
+                font-size: 1.2vw;
+                line-height: 1.5;
+                margin: 0;
+
+                @include mobile-ld {
+                    font-size: 3vw;
+                }
+
+                @include smartphones {
+                    font-size: 6vw;
+                }
+            }
+        }
+    }
+
+    &Credits {
+        margin: 0 4%;
+        margin-top: 3vw;
+
+        @include mobile-ld {
+            margin-top: 4vw;
+        }
+
+        @include smartphones {
+            margin-top: 5vw;
+        }
+
+        &Controls {
+            margin-top: 5vw;
+            padding: 0 4%;
+            background-color: $slideMoreInfoBG;
+            display: flex;
+            position: relative;
+            height: 4vw;
+
+            & > div:not(:first-child) {
+                margin-left: 2vw;
+            }
+
+            @include mobile-ld {
+                height: 8vw;
+            }
+
+            @include smartphones {
+                height: 15vw;
+
+                & > div:not(:first-child) {
+                    margin-left: 8vw;
+                }
+            }
+
+            &Item {
+                cursor: pointer;
+                font-size: 1.4vw;
+                line-height: 4vw;
+                position: relative;
+                height: 100%;
+
+                @include mobile-ld {
+                    font-size: 2.7vw;
+                    line-height: 8vw;
+                }
+
+                @include smartphones {
+                    font-size: 6vw;
+                    line-height: 15vw;
+                }
+
+                &Under {
+                    position: absolute;
+                    height: 0.2vw;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background-color: #fff;
+
+                    @include smartphones {
+                        height: 0.5vw;
+                    }
+                }
+            }
+        }
+
+        &Item {
+            display: flex;
+            margin-top: 2vw;
+
+            @include smartphones {
+                margin-top: 5vw;
+            }
+
+            &Image {
+                &Poster {
+                    width: 10vw;
+                    height: auto;
+
+                    @include mobile-ld {
+                        width: 20vw;
+                    }
+
+                    @include smartphones {
+                        width: 30vw;
+                    }
+                }
+            }
+
+            &Body {
+                margin-left: 2vw;
+
+                @include mobile-ld {
+                    margin-left: 5vw;
+                }
+
+                @include smartphones {
+                    margin-left: 5vw;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $white;
+
+                    h3 {
+                        font-size: 1.4vw;
+                        margin: 0;
+                        padding: 0;
+
+                        @include mobile-ld {
+                            font-size: 4vw;
+                        }
+
+                        @include smartphones {
+                            font-size: 6vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

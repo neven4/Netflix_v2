@@ -1,0 +1,271 @@
+@import '../../styles/global.scss';
+
+.searchPage {
+    margin-top: 8%;
+
+    @include mobile-ld {
+        margin-top: 10vw;
+    }
+
+    @include smartphones {
+        margin-top: 15vw;
+    }
+
+    &Header {
+        align-items: center;
+        background-color: $slideMoreInfoBG;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Roboto';
+        font-size: 1.4vw;
+        color: $white;
+        padding: 0 4%;
+        height: 4vw;
+        position: relative;
+
+        @include mobile-ld {
+            font-size: 2.4vw;
+            height: 6vw;
+        }
+
+        @include smartphones {
+            flex-direction: column;
+            font-size: 5vw;
+            height: 20vw;
+
+            & > span {
+                margin-top: 2vw;
+            }
+        }
+
+        &Filter {
+            align-items: center;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 1.2vw;
+            height: 100%;
+            position: relative;
+
+            & > li:not(:first-child) {
+                margin-left: 2vw;
+            }
+
+            @include mobile-ld {
+                font-size: 2.4vw;
+            }
+
+            @include smartphones {
+                margin-top: 2vw;
+                font-size: 5vw;
+                height: 10vw;
+
+                & > li:not(:first-child) {
+                    margin-left: 6vw;
+                }
+            }
+
+            &Item {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                position: relative;
+
+                &Active {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    height: 0.1vw;
+                    width: 100%;
+                    display: block;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    &Container {
+        margin: 3vw 4%;
+
+        @include smartphones {
+            margin: 8vw 4%;
+        }
+
+        h2 {
+            color: $white;
+        }
+
+        &Body {
+            margin: 0 4%;
+            margin-top: 2.5vw;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-column-gap: 2.5vw;
+            grid-row-gap: 3.5vw;
+            justify-content: center;
+            justify-items: center;
+
+            @include mobile-ld {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            @include smartphones {
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 5vw;
+                grid-row-gap: 7vw;
+            }
+        }
+
+        &Item {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            color: $white;
+
+            &:hover {
+                img {
+                    opacity: 1;
+                }
+            }
+
+            img {
+                width: 100%;
+                opacity: 0.8;
+                height: auto;
+            }
+
+            h4 {
+                font-size: 1.4vw;
+                margin: 0;
+                margin-top: 1vw;
+
+                @include mobile-ld {
+                    font-size: 2vw;
+                }
+
+                @include smartphones {
+                    font-size: 5vw;
+                    margin-top: 2vw;
+                }
+            }
+        }
+    }
+
+    &Btns {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 4vw;
+
+        & > div:not(:first-child) {
+            margin-left: 1vw;
+        }
+
+        @include mobile-ld {
+            margin-top: 4vw;
+
+            & > div:not(:first-child) {
+                margin-left: 2vw;
+            }
+        }
+
+        @include smartphones {
+            margin-top: 8vw;
+
+            & > div:not(:first-child) {
+                margin-left: 3vw;
+            }
+        }
+    }
+
+    &Btn {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        padding: 0.8vw 2vw 1vw 2vw;
+        background-color: $slideMoreInfoBG;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $metaDataColor;
+
+            .searchPageBtnTitle {
+                color: $black;
+            }
+
+            i {
+                color: $black;
+            }
+        }
+
+        @include mobile-ld {
+            padding: 2vw 3.5vw;
+
+            &:hover {
+                background-color: $slideMoreInfoBG;
+
+                .searchPageBtnTitle {
+                    color: $synopsisColor;
+                }
+
+                i {
+                    color: $synopsisColor;
+                }
+            }
+        }
+
+        @include smartphones {
+            padding: 3vw 5vw;
+
+            &:hover {
+                background-color: $slideMoreInfoBG;
+
+                .searchPageBtnTitle {
+                    color: $synopsisColor;
+                }
+
+                i {
+                    color: $synopsisColor;
+                }
+            }
+        }
+
+        &Title {
+            font-weight: 700;
+            line-height: 1;
+            color: $synopsisColor;
+            font-size: 1.3vw;
+            margin: 0 0.5vw;
+
+            @include mobile-ld {
+                font-size: 2vw;
+                margin: 0 2vw;
+            }
+
+            @include smartphones {
+                font-size: 5vw;
+                margin: 0 2vw;
+            }
+        }
+
+        i {
+            color: $synopsisColor;
+            font-size: 1.2vw;
+            line-height: 1vw;
+            margin-top: 0.2vw;
+
+            @include mobile-ld {
+                font-size: 2vw;
+                margin: 0 0.3vw;
+            }
+
+            @include smartphones {
+                font-size: 4vw;
+                margin-top: 0.5vw;
+            }
+        }
+    }
+}

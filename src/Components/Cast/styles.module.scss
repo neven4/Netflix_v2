@@ -1,0 +1,157 @@
+@import '../../styles/global.scss';
+
+.cast {
+    padding: 6% 4% 4% 4%;
+
+    @include smartphones {
+        padding: 15% 4% 8% 4%;
+    }
+
+    h3 {
+        color: $white;
+        margin-top: 4%;
+
+        @include smartphones {
+            font-size: 7vw;
+        }
+    }
+
+    &Body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2vw;
+        margin-top: 2vw;
+        
+        @include mobile-ld {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 4vw;
+        }
+
+        @include smartphones {
+            grid-template-columns: 1fr;
+            margin-top: 8vw;
+        }
+
+        &Item {
+            display: flex;
+
+            &Photo {
+                width: 8vw;
+                position: relative;
+                height: 0;
+                padding: 5.5vw 0;
+                overflow: hidden;
+
+                @include mobile-ld {
+                    width: 20vw;
+                    padding: 14vw 0;
+                }
+
+                @include smartphones {
+                    width: 35vw;
+                    padding: 26vw 0;
+                }
+
+                &Container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: cover;
+                }
+            }
+
+            &Body {
+                margin-left: 2vw;
+
+                a {
+                    text-decoration: none;
+                    color: $white;
+                }
+
+                @include smartphones {
+                    margin-left: 5vw;
+                }
+
+                &Caracter {
+                    color: $white;
+                    font-size: 1.2vw;
+
+                    @include mobile-ld {
+                        font-size: 2vw;
+                    }
+
+                    @include smartphones {
+                        font-size: 5vw;
+                    }
+                }
+                a {
+                    display: block;
+                    font-size: 1.8vw;
+
+                    @include mobile-ld {
+                        font-size: 2.8vw;
+                    }
+
+                    @include smartphones {
+                        font-size: 6vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.currentList {
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+        margin-top: 1vw;
+
+        @include smartphones {
+            margin-top: 3vw;
+        }
+    }
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+
+    @include mobile-ld {
+        margin-top: 4vw;
+    }
+
+    @include smartphones {
+        display: none;
+    }
+
+    .btn {
+        cursor: pointer;
+        margin-left: 1vw;
+
+        @include mobile-ld {
+            margin-left: 3vw;
+        }
+
+        i {
+            color: $metaDataColor;
+            font-size: 2.2vw;
+
+            @include mobile-ld {
+                font-size: 5vw;
+            }
+        }
+    }
+
+    .active {
+        i {
+            color: $white;
+        }
+    }
+}
+

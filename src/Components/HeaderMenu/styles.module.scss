@@ -1,0 +1,197 @@
+@import '../../styles/global.scss';
+
+.headerMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    z-index: -1;
+    font-family: 'Roboto';
+    opacity: 0;
+    transition: height .54s cubic-bezier(.5,0,.1,1) 0s, opacity .44s cubic-bezier(.5,0,.1,1) .1s;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(#000, 0.1);
+    }
+
+    &Container {
+        padding: 0 4% 5% 4%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+
+        @include smartphones {
+            padding: 15% 8% 10% 8%;
+            justify-content: center;
+        }
+    }
+
+    &MainMenu {
+        align-self: flex-end;
+        margin-top: auto;
+        margin-right: 70px;
+
+        @include smartphones {
+            align-self: flex-start;
+            margin-top: 10vw;
+            margin-right: 0;
+        }
+
+        &Search {
+            display: none;
+
+            @include smartphones {
+                display: block;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                font-size: 3vw;
+                font-weight: 700;
+
+                @include smartphones {
+                    text-align: center;
+                    font-size: 9vw;
+                    margin-top: 10vw;
+                }
+            }
+
+            li:not(:first-child) {
+                margin-top: 1.6vw;
+
+                @include smartphones {
+                    margin-top: 4vw;
+                }
+            }
+        }
+    }
+
+    a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            color: $lightRed
+        }
+    }
+
+    &Popular {
+        flex-grow: 2;
+        display: flex;
+        justify-content: center;
+
+        @include smartphones {
+            display: none;
+        }
+
+        &Item {
+            position: relative;
+            align-self: flex-start;
+            display: flex;
+            flex-direction: column;
+
+            &:first-child {
+                padding-right: 7vw;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    display: block;
+                    height: 65%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 2px;
+                    background-color: rgba($white, 0.4);
+                }
+            }
+
+            &:last-child {
+                margin-left: 7vw;
+            }
+
+            h3 {
+                font-size: 1.8vw;
+                color: $white;
+                margin: 0;
+                font-weight: 400;
+                margin-bottom: 3vw;
+                margin-top: 1vw;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    &:not(:first-child) {
+                        margin-top: 1vw;
+                    }
+
+                    a {
+                        align-items: center;
+                        display: flex;
+                        font-size: 1.4vw;
+                        cursor: pointer;
+
+                        .headerMenuLinkTitle {
+                            display: block;
+                            margin-left: 1.6vw;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            max-width: 13vw;
+                        }
+
+                        &:hover {
+                            .headerMenuPlay {
+                                border-color: $lightRed;
+
+                                i {
+                                    color: $lightRed
+                                }
+                            }
+
+                            a {
+                                color: $lightRed;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    &Play {
+        align-items: center;
+        border: 2px solid $white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        height: 2.5vw;
+        width: 2.5vw;
+
+        i {
+            color: $white;
+            font-size: 0.8vw;
+            margin-left: 2px;
+        }
+    }
+}

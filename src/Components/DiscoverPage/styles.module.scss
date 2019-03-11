@@ -1,0 +1,313 @@
+@import '../../styles/global.scss';
+
+.discoverPage {
+    margin-top: 8%;
+
+    @include mobile-all {
+        margin-top: 3.6rem;
+    }
+
+    &Title {
+        align-items: center;
+        margin: 2% 4%;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            color: $white;
+            font-size: 2.5vw;
+            margin: 0;
+            padding: 0;
+
+            @include mobile-all {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    &SwitchType {
+        align-items: center;
+        display: flex;
+
+        & > div:last-child {
+            margin-left: 1vw;
+        }
+
+        &Item {
+            cursor: pointer;
+            color: $white;
+            display: flex;
+            line-height: 1.4vw;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4vw;
+            border-radius: 10px;
+            border: 1px solid $white;
+            height: 3vw;
+            padding: 0 2vw;
+
+            @include mobile-all {
+                font-size: 0.8rem;
+                height: 1.2rem;
+            }
+
+            &:hover {
+                border-color: $lightRed;
+                background-color: $lightRed;
+            }
+
+            &Active {
+                font-weight: 700;
+                border-color: $lightRed;
+                background-color: $lightRed;
+            }
+        }
+    }
+
+    &Header {
+        align-items: center;
+        display: grid;
+        justify-items: stretch;
+        grid-template-columns: 1.5fr repeat(4, 1fr);
+        grid-gap: 2vw;
+        background-color: $slideMoreInfoBG;
+        font-family: 'Roboto';
+        font-size: 1.4vw;
+        color: $white;
+        padding: 1% 4%;
+        position: relative;
+
+        @include mobile-all {
+            padding: 3% 4%;
+            
+        }
+
+        @include mobiles {
+            grid-template-columns: 1fr 1fr;
+            font-size: 1rem;
+            grid-column-gap: 2rem;
+        }
+
+        @include mobile-600 {
+            grid-template-columns: 1fr;
+        }
+
+        h2 {
+            &:first-letter {
+                text-transform: capitalize;
+            }
+
+            @include mobiles {
+                font-size: 1rem;
+            }
+        }
+
+        &Sort {
+            align-items: center;
+            display: flex;
+            position: relative;
+
+            &Title {
+                font-size: 1.1vw;
+                margin-right: 0.5vw;
+                flex: 1 1 20%;
+
+                @include mobiles {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+        &Btns {
+            color: $white;
+            border-radius: 3px;
+            background-color: $metaDataColor;
+            outline: none;
+            border: none;
+            flex: 1 1 80%;
+            padding: 0.5vw;
+
+            option {
+                padding: 0.5vw;
+                outline: none;
+            }
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        &SearchBtn {
+            cursor: pointer;
+            outline: none;
+            color: $lightRed;
+            border-radius: 5px;
+            border: 2px solid $lightRed;
+            padding: 0.5vw 1vw;
+            background-color: $slideMoreInfoBG;
+        }
+    }
+
+    &Body {
+        margin: 4% 8%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-column-gap: 2.5vw;
+        grid-row-gap: 3.5vw;
+        justify-content: center;
+        justify-items: center;
+
+        @include mobiles {
+            grid-template-columns: repeat(4, 1fr);
+            margin: 30px 8%;
+        }
+
+        @include mobile-all {
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 4vw;
+        }
+
+        @include mobile-500 {
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 30px;
+        }
+    }
+
+    &Item {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        color: $white;
+
+        &:hover {
+            img {
+                opacity: 1;
+            }
+        }
+
+        img {
+            width: 100%;
+            opacity: 0.8;
+            height: auto;
+        }
+
+        h4 {
+            font-size: 1.4vw;
+            margin: 0;
+            margin-top: 1vw;
+
+            @include mobiles {
+                font-size: 1.8vw;
+            }
+
+            @include mobile-all {
+                font-size: 2.5vw;
+            }
+
+            @include mobile-500 {
+                font-size: 3vw;
+            }
+        }
+    }
+
+    &Btns {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 4vw;
+
+        & > div:not(:first-child) {
+            margin-left: 1vw;
+
+            @include mobiles {
+                 margin-left: 1.5vw;
+            }
+
+            @include mobile-all {
+                 margin-left: 2.2vw;
+            }
+
+            @include mobile-500 {
+                 margin-left: 3vw;
+            }
+        }
+    }
+
+    &Btn {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        padding: 0.8vw 2vw 1vw 2vw;
+        background-color: $slideMoreInfoBG;
+        cursor: pointer;
+
+        @include mobiles {
+            padding: 1.2vw 2.4vw;
+        }
+
+        @include mobile-all {
+            padding: 1.6vw 2.8vw;
+        }
+
+        @include mobile-500 {
+            padding: 2vw 3.2vw;
+        }
+
+        &:hover {
+            background-color: $metaDataColor;
+
+            .morePageBtnTitle {
+                color: $black;
+            }
+
+            i {
+                color: $black;
+            }
+        }
+
+        &Title {
+            font-weight: 700;
+            line-height: 1;
+            color: $synopsisColor;
+            font-size: 1.3vw;
+            margin: 0 0.5vw;
+
+            @include mobiles {
+                font-size: 1.6vw;
+            }
+
+            @include mobile-all {
+                font-size: 2.2vw;
+            }
+
+            @include mobile-500 {
+                font-size: 3vw;
+            }
+        }
+
+        i {
+            color: $synopsisColor;
+            font-size: 1.2vw;
+            line-height: 1vw;
+            margin-top: 0.2vw;
+
+            @include mobiles {
+                font-size: 1.6vw;
+            }
+
+            @include mobile-all {
+                font-size: 2.2vw;
+            }
+
+            @include mobile-500 {
+                font-size: 3vw;
+            }
+        }
+    }
+}

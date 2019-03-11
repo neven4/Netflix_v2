@@ -1,0 +1,339 @@
+@import '../../styles/global.scss';
+
+.slideMoreInfo {
+    background-color: $slideMoreInfoBG;
+    position: relative;
+    overflow: hidden;
+    outline: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: height .54s cubic-bezier(.5,0,.1,1) 0s, opacity .44s cubic-bezier(.5,0,.1,1) .1s;
+    margin-top: 1px;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .3s cubic-bezier(.5,0,.1,1) 0s;
+
+    &Content {
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        width: 70%;
+
+        &Item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        &Image {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            z-index: 2;
+            transition: opacity 0.45s cubic-bezier(.5,0,.1,1) 0s;
+        }
+
+        &Video {
+            top: 40%;
+            left: 43%;
+            transform: translate(-30%, -40%);
+            opacity: 0;
+            transition: opacity 0.45s cubic-bezier(.5,0,.1,1) 0s;
+        }
+    }
+
+    &Color {
+        left: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        width: 30%;
+        background-color: $slideMoreInfoBG;
+
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: 10;
+            background-image: linear-gradient(to right,$slideMoreInfoBG,transparent);
+            top: 0;
+            bottom: 0;
+            left: 100%;
+            width: 275px;
+        }
+    }
+
+    &Shadow {
+        background-image: linear-gradient(to bottom,rgba($slideMoreInfoBG, 0) 0,rgba($slideMoreInfoBG, 0.25) 33%,rgba($slideMoreInfoBG, .8) 100%);
+        height: 114px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        background-size: 100% 114px;
+    }
+
+    &PlayBtn {
+        position: absolute;
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 200;
+    }
+}
+
+.content {
+    padding: 18px 0 12px 4%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    color: $white;
+
+    a {
+        text-decoration: none;
+        color: $white;
+    }
+
+    h3 {
+        font-size: 3vw;
+        font-weight: 700;
+        margin: 0 0 .2em 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &Body {
+        opacity: 0;
+        width: 36vw;
+        min-width: 330px;
+        color: $synopsisColor;
+        line-height: 1.3;
+        font-size: 1.5vw;
+        margin-top: .3em;
+        transition: opacity 440ms cubic-bezier(.5,0,.1,1) 0s;
+
+        &FilmInfoSmall {
+            font-size: 1.1vw;
+            margin-bottom: .8em;
+
+            & > span:not(:first-child) {
+                margin-left: 1.2em;
+            }
+        }
+
+        .synopsis {
+            font-family: $sourceSansPro;
+            margin: .8em 0 0 0;
+            max-height: 13.26vw;
+            overflow: hidden;
+        }
+    }
+
+    &Menu {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        font-size: 1.4vw;
+        z-index: 100;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &Item {
+            padding: 1em 1.5em 0;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            color: $metaMenu;
+            min-width: 5%;
+            pointer-events: auto;
+
+            &Title {
+                font-family: $sourceSansPro;
+                color: $metaMenu;
+                transition: color 0.3s ease-out;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+
+            .underline {
+                height: .1em;
+                display: block;
+                width: 100%;
+                margin-top: .3em;
+                transform: translateY(.4em);
+                transition: transform .2s linear;
+            }
+        }
+
+        .current {
+            & > .contentMenuItemTitle {
+                color: $white
+            }
+
+            .underline {
+                transform: translateY(0);
+                background-color: $white;
+            }
+        }
+    }
+
+    &MoreLikeThis {
+        margin: 40px 0;
+        width: 100%;
+    }
+
+    &Details {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 42px - 2em);
+    }
+}
+
+.meta {
+    margin: 20px 0 0 0;
+    font-family: $sourceSansPro;
+
+    &List {
+        font-size: .9em;
+        color: $metaDataColor;
+        margin: 2px 0 0 0;
+    }
+
+    &Label {
+        font-weight: 700;
+        margin-right: 5px;
+    }
+
+    &Link {
+        color: $metaDataColor;
+        text-decoration: none;
+        margin-left: 4px;
+        transform: all 0.2s ease;
+
+        &:hover {
+            color: $synopsisColor;
+            text-decoration: underline;
+        }
+    }
+}
+
+.actionBtns {
+    align-items: center;
+    color: $white;
+    display: flex;
+    margin: 1em 0;
+    font-size: 1.2vw;
+
+    &Plus {
+        & > div {
+            height: 1.85vw;
+            width: 1.85vw;
+
+            svg {
+                height: 1vw;
+                width: 1vw;
+            }
+        }
+    }
+
+    &Btn {
+        border-width: 2px;
+        height: 2.5vw;
+        width: 2.5vw;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        svg {
+            height: 1.2vw;
+            width: 1.2vw;
+
+            path {
+                fill: $white;
+            }
+        }
+    }
+
+    &Like {
+        margin-left: 4em;
+
+        svg {
+            margin-bottom: 1px;
+        }
+
+        &__done {
+            border-color: $green;
+
+            svg {
+                path {
+                    fill: $green;
+                }
+            }
+        }
+    }
+
+    &Dislike {
+        margin-left: 0.7em;
+
+        svg {
+            margin-top: 1px;
+        }
+
+        &__done {
+            border-color: $lightRed;
+
+            svg {
+                path {
+                    fill: $lightRed;
+                }
+            }
+        }
+    }
+}
+
+.closeBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 100;
+    margin-right: 4%;
+
+    &Icon {
+        border-width: 2px;
+        border-color: $white;
+        height: 30px;
+        width: 30px;
+        transition: all 0.3s ease-out;
+
+        i {
+            color: $white;
+        }
+    }
+}

@@ -1,0 +1,115 @@
+@import '../../styles/global.scss';
+
+.moreInfoSlide {
+    text-decoration: none;
+    color: $white;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-right: 30px;
+
+    &:hover {
+        .moreInfoSlidePlay {
+            opacity: 1;
+        }
+
+        .moreInfoSlideAdd {
+            opacity: 1;
+        }
+    }
+
+    &Img {
+        background-color: $black;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 0;
+        padding: 28.125% 0;
+        margin-bottom: 0.6vw;
+        position: relative;
+    }
+
+    &Video {
+        background-color: $black;
+        width: 100%;
+        height: 56.25%;
+        margin-bottom: 0.6vw;
+        position: relative;
+
+        &Player {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &Play {
+        opacity: 0;
+        transition: opacity 0.45s ease-out;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &Add {
+        border-width: 2px;
+        opacity: 0;
+        position: absolute;
+        top: 42%;
+        right: 40px;
+        height: 2.2vw;
+        width: 2.2vw;
+        transition: opacity 0.45s ease-out;
+        z-index: 20;
+
+        svg {
+            height: 1vw;
+            width: 1vw;
+        }
+    }
+
+    &Done {
+        border-color: $green;
+
+        i {
+            font-size: 1vw;
+            color: $green;
+        }
+    }
+
+    h4 {
+        margin: 0;
+        font-size: 1.4vw;
+        font-family: $sourceSansPro;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &FilmInfo {
+        font-size: 1.2vw;
+        margin-bottom: 0.5vw;
+        margin-top: 0.8vw;
+
+        & > span:not(:first-child) {
+            margin-left: 0.8vw;
+        }
+    }
+
+    &Overview {
+        font-family: $sourceSansPro;
+        font-size: 1.2vw;
+        white-space: normal;
+        width: 100%;
+        overflow: hidden;
+
+        p {
+            height: 4.6vw;
+            margin: 0;
+        }
+    }
+}

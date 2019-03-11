@@ -1,0 +1,27 @@
+@import '../../styles/global.scss';
+
+.filmInfoSmall {
+    display: flex;
+    color: $white;
+    align-items: center;
+    text-align: left;
+    font-size: 0.6vw;
+    font-weight: 700;
+    font-family: $sourceSansPro;
+
+    & > span:not(:first-child) {
+        margin-left: 0.5vw;
+    }
+
+    .pg {
+        box-sizing: border-box;
+        border: 1px solid $lightGray;
+        margin-top: 1px;
+        padding: 0 4px 1px;
+    }
+}
+
+
+
+
+
